@@ -4,42 +4,51 @@ let allChamp = [
  img: 'https://memehay.com/meme/20211201/la-ai-ai-muon-mac-ket-trong-lau-dai-tinh-ai.jpg',
  video :'videos/dvh.mp4',
  img_lock: 'https://media.techz.vn/resize_x450x260/media2019/upload2019/2020/09/08/Dam-vinh-hung-vua-tiet-lo-ly-do-chia-tay-nguoi-yeu-cu-dan-mang-dong-long-ung-ho-6_08092020094302.jpg',
+ vitri : 'sp'
 },
 { name : 'Akali',
  img: 'https://vnn-imgs-f.vgcloud.vn/2021/10/03/20/cong-an-tp-hcm-yeu-cau-cung-cap-thong-tin-nghe-si-lam-tu-thien-theo-phan-anh-cua-ba-nguyen-phuong-hang.jpeg',
  video :'videos/phuonghangsad.mp4',
  img_lock : 'https://tintucnong24gio.com/wp-content/uploads/2021/05/ho.png?v=1620436518',
+ vitri :'mid'
 },
 { name : 'Rengar',
  img: 'https://memehay.com/files/posts/20201110/tran-duc-bo-noi-hummmmmm.jpg',
  video :'videos/tdb.mp4',
  img_lock : 'https://i.pinimg.com/originals/1c/f6/e3/1cf6e315ad8fa42d9b5df247c5c6e9ec.jpg',
+ vitri : 'rung'
 },
 { name : 'Varus',
  img: 'https://35express.org/wp-content/uploads/2021/12/tiktoker-huynh-dat-la-ai-1-35express.jpg',
  video :'videos/huynhdatdibodoi.mp4',
  img_lock : 'https://i.ytimg.com/vi/mJpJhVTxtN0/maxresdefault.jpg',
+ vitri: 'ad'
 },
 { name : 'Wukong',
  img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDm6l1LdKNpfSKeswayiHqtyApLz6HW-e8A&usqp=CAU',
  video :'videos/hl.mp4',
  img_lock : 'https://taimeme.com/public/upload/memes/ngo-linh-ton-ngo-khong-co-khuon-mat-hoai-linh.jpg',
+ vitri : 'top'
 },
 { name : 'Lucian',
  img: 'https://scontent.fdad1-2.fna.fbcdn.net/v/t1.15752-9/259013112_1029798464241592_5817412410378623840_n.png?_nc_cat=105&ccb=1-5&_nc_sid=ae9488&_nc_ohc=QY5iNXvAXPUAX-CWF6D&_nc_ht=scontent.fdad1-2.fna&oh=03_AVJE-P3ollrRg93Rdjo5LHX5DlnMUdUl83gdJOs_IdtsHw&oe=622E615A',
  video :'videos/lykha.mp4',
  img_lock : 'https://scontent.fdad2-1.fna.fbcdn.net/v/t1.15752-9/272769093_311622417607083_3229862593122051665_n.png?_nc_cat=101&ccb=1-5&_nc_sid=ae9488&_nc_ohc=Wslb1O8I8BsAX8IsWBt&_nc_ht=scontent.fdad2-1.fna&oh=03_AVIYaFJwJ2VPtTIkRYp8JC0rFfrokxKKVYML3X4z8oa0iA&oe=622EE3FC',
+ vitri : 'ad'
 },
 { name : 'Yummi',
  img: 'https://tinhhoabacbo.com/wp-content/uploads/2021/12/m10.jpg',
  video :'videos/meosimy.mp4',
  img_lock : 'https://kenh14cdn.com/thumb_w/660/203336854389633024/2021/4/17/photo-1-1618644236003344274535.jpg',
+ vitri : 'sp'
 },
 { name : 'Caitlyn',
  img: 'https://gamek.mediacdn.vn/133514250583805952/2021/10/18/base64-1634526438582612507716.png',
  video :'videos/conganiachay.mp4',
  img_lock : 'https://i.ytimg.com/vi/j8mZDd9sVYw/maxresdefault.jpg',
+ vitri : 'ad'
 },
+/*
 { name : 'Darius',
  img: 'images/thaybadit.jpg',
  video :'videos/thaybadit.mp4',
@@ -144,5 +153,5 @@ img_lock : 'https://th.bing.com/th/id/OIP.K9gt5TrGq1bgaMLpL3sSgQHaE2?w=291&h=191
 img: 'https://th.bing.com/th/id/OIP.9lB_dZxKnJUEOMmFM-oAvQHaEK?w=304&h=180&c=7&r=0&o=5&dpr=1.12&pid=1.7',
 video :'videos/khoapug.mp4',
 img_lock : 'https://th.bing.com/th/id/OIP.EN0GE0_CIK5xYJbCjXBObQHaEG?w=297&h=180&c=7&r=0&o=5&dpr=1.12&pid=1.7',
-},
+},*/
 ];

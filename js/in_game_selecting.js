@@ -197,3 +197,28 @@ function reset_lock_champ() {
   $('#main_bg').css('overflow-y','scroll');
      nhaccuong.play();
 }
+
+
+$( "#search_champs" ).keyup(function() {
+  var dInput = $(this).val().toLowerCase();
+  $(".card").filter(function() {
+    $(this).toggle( $(this).text().toLowerCase().indexOf(dInput) > -1 )
+  })
+});
+
+$(document).on('click','#position_menu a',function(){
+  $(this).addClass('active').siblings().removeClass('active');
+  var data_posi_menu =$(this).data('position');
+  $(".card").filter(function() {
+     return  $(this).attr('id') == data_posi_menu
+    }).show('normal')
+    $(".card").filter(function() {
+      return  $(this).attr('id') != data_posi_menu
+     }).hide('normal')
+})
+
+$('#all_lane').click(function(){
+    $(this).addClass('active')
+    $('.card').show('normal')
+    $('#position_menu a').removeClass('active')
+})

@@ -17,7 +17,7 @@ $(document).ready(function(){
     else{
        for (let i = 0; i < allChamp.length; i++) {
   let liTag = `
-<a class="card" style="height: 120px;width: 80px;visibility:hidden" data-name="${i}"  a-index="${i + 1}">
+<a id="${allChamp[i].vitri}" class="card" style="height: 120px;width: 80px;" data-name="${i}"  a-index="${i + 1}">
     <div class="image">
       <img src="${allChamp[i].img}" style="height: 80px;">
     </div>
@@ -27,8 +27,12 @@ $(document).ready(function(){
   ulTag.insertAdjacentHTML("beforeend", liTag);
 }  
     }
+
+    
    
 });
+
+
 
 
 function startTimer(duration, display) {
@@ -106,7 +110,7 @@ $('#leagues .item')
 
       setTimeout(()=>{
 $('#all').transition('fade up');
-setTimeout(()=>{
+/*setTimeout(()=>{
 $('#champs .card')
   .transition({
     animation : 'fade up',
@@ -114,7 +118,7 @@ $('#champs .card')
     interval  : 50
   });
 
-},500);
+},500);*/
 $('#enemys').transition('fade left');
 new Audio('musics/show_champs.mp3').play();
 setTimeout(()=>{
