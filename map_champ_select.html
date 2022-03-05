@@ -1,0 +1,715 @@
+<!--!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Champ select</title>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+
+<style type="text/css">
+	.card:hover {
+		filter: brightness(1.1);
+		transform: scale(1.04);
+	}
+	
+</style>
+</head>
+<body>
+	 <div id="select_champ"  style="background: url('images/map-champ-select.png');width: 100%;height: 100%;background-repeat: no-repeat; background-size: 100% 100%;overflow: hidden">
+
+	 	<center id="all" style="visibility: hidden;" ><div style="height: 90px;width: 60vw;background:transparent;color: white;font-size: 3.5ch;padding: 20px;font-weight: bold;"><span>CHỌN TƯỚNG !</span>	
+	 		
+<h1 id="rew" style="margin-top:0px"></h1>
+
+
+	 	</div>
+
+<div id="main_bg" class="ui container" style="width: 60vw;height: 380px;box-shadow: inset 0px 0px 40px 40px rgba(0, 0, 0, 0.4);-webkit-border-radius: 140px;background-repeat: no-repeat;background-size: cover ;
+ ">
+
+ <video id="video_champ" style="position: fixed;height: 376px;width: 60vw;justify-content: center;margin: 0 auto;right: 0;left: 0;object-fit: contain;border-radius: 140px;display: none;">
+   <source type="">
+ </video>
+
+
+<div id="champs" class="ui inverted six doubling mini cards" style="padding: 20px;margin-left: -10px;justify-content: center;">
+
+  <a id="champ1" class="card" style="height: 120px;width: 80px;" data-name="0" >
+    <div class="image">
+      <img src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/10/30/4/0/0/1/1572405540270_600.jpg" style="height: 80px;">
+    </div>
+    <div class="content"  style="color: white;font-size: 1.6ch">
+    Taric</div>
+  </a>
+
+
+  <a id="champ2" class=" card"  style=";height: 120px;width: 80px;" data-name="1" >
+    <div class="image" >
+      <img src="https://vnn-imgs-f.vgcloud.vn/2021/10/03/20/cong-an-tp-hcm-yeu-cau-cung-cap-thong-tin-nghe-si-lam-tu-thien-theo-phan-anh-cua-ba-nguyen-phuong-hang.jpeg" style="height: 80px;object-fit: cover;">
+    </div>
+    <div class="content"  style="color: white;font-size: 1.6ch;margin-top: 0px;">
+    Akali</div>
+  </a>
+
+  <a id="champ3" class="card" style="height: 120px;width: 80px" data-name="2" >
+    <div class="image">
+      <img src="https://cdn.vietnammoi.vn/stores/news_dataimages/tuannh/082018/14/13/5020_thanh-chui-hai-phong-bi-hieu-nham-trai-thang-khi-yeu-mau-hong-ghet-su-gia-doi-7.jpg" style="height: 80px;">
+    </div>
+    <div class="content"  style="color: white;font-size: 1.6ch;margin-top: 0px;">
+    Yummi</div>
+  </a>
+
+  <a id="champvip" class="card" style="height: 120px;width: 80px" data-name="3">
+    <div class="image">
+      <img src="https://img.docbao.vn/2021/05/21/tran-duc-bo.jpg" style="height: 80px;">
+    </div>
+    <div class="content"  style="color: white;font-size: 1.6ch;margin-top: 0px;">
+    Rengar</div>
+  </a>
+
+  <a class="card"  style="height: 120px;width: 80px" data-name="4">
+    <div class="image">
+      <img src="https://35express.org/wp-content/uploads/2021/12/tiktoker-huynh-dat-la-ai-1-35express.jpg" style="height: 80px;">
+    </div>
+      <div class="content"  style="color: white;font-size: 1.6ch;margin-top: -0px;">
+    Varus</div>
+  </a>
+
+  <a class="card"  style="height: 120px;width: 80px" data-name="5">
+    <div class="image">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDm6l1LdKNpfSKeswayiHqtyApLz6HW-e8A&usqp=CAU" style="height:80px">
+    </div>
+      <div class="content"  style="color: white;font-size: 1.6ch;margin-top: 0px;">
+    Wukong</div>	
+  </a>
+
+</div>
+
+<style type="text/css">
+  #lock_champ {
+background-image: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/button-accept-disabled.png');
+    width: 210px;height: 62px;
+    transition: 0.2s ;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: optimizeQuality;
+    -ms-interpolation-mode:  nearest;
+    margin-top: 210px;
+transform: scale(0.8);
+pointer-events: none;
+
+  }
+</style>
+
+<div id="lock_champ" data-huhu="0">
+  <h3 id="lock_champ_btn_text" style="position:relative;top:22px;color:white;pointer-events: none;font-size: 2ch;filter: brightness(0.6);">KHÓA</h3>
+</div>
+
+<script type="text/javascript">
+  window.onload = function(){
+new Audio('musics/Messenger.mp3').play();
+}
+
+ 	const main_bg =document.getElementById('main_bg');
+
+
+//LOCK_CHAMP_BUTTON_ANIMATION
+ 	function enable_lock_champ_btn(){
+ 		document.getElementById('lock_champ').style.backgroundImage="url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/button-accept-default.png')";
+ 		document.getElementById('lock_champ_btn_text').style.filter="brightness(1)";
+ 		document.getElementById('lock_champ').style.pointerEvents='auto';	
+
+ 	}
+  //
+
+
+
+  	function animation_select_champ1(){
+  		main_bg.style.backgroundImage="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ),url('https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/10/30/4/0/0/1/1572405540270_600.jpg')";
+  		$('#lock_champ').data('huhu', 'new') ; 
+  		enable_lock_champ_btn();
+ 	   document.getElementById('champ_img_bui').src ="https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/10/30/4/0/0/1/1572405540270_600.jpg";
+ 	   new Audio('musics/pick_champ.mp3').play();
+
+  	}
+
+
+(function() {
+  $(function() {
+    var toggle;
+    return toggle = new Toggle('.cards');
+  });
+
+  this.Toggle = (function() {
+    class Toggle {
+      constructor(toggleClass) {
+        this.el = $(toggleClass);
+        this.tabs = this.el.find(".card");
+        this.bind();
+      }
+
+      show(index) {
+        var activePanel, activeTab;
+        //update tabs
+        this.tabs.removeClass('blue');
+        this.tabs.css( "border", "unset" );
+        this.tabs.css( "transform", "scale(1)" );
+        activeTab = this.tabs.get(index);
+        $(activeTab).addClass('blue');
+        activeTab.style.border="1px solid #2185d0";
+        activeTab.style.filter="brightness(1.1)";
+        activeTab.style.transform='scale(1.1)';
+
+        var id =  $(activeTab).data('name');
+switch (id) {
+  case 0:
+  animation_select_champ1();
+  auto_select_champ_bot1();
+    break;
+  case 1:
+     animation_select_champ2();
+     auto_select_champ_bot2();
+    break;
+  case 2:
+    animation_select_champ3();
+    auto_select_champ_bot3();
+    break;
+  case 3:
+   animation_select_champ4();
+   auto_select_champ_bot4();
+    break;
+  case 4:
+  animation_select_champ5();
+  auto_select_champ_bot5();
+    break;
+  case 5:
+  animation_select_champ6();
+  auto_select_champ_bot1();
+    break;
+  case  6:
+    day = "Saturday";
+}
+
+       
+      }
+
+      bind() {
+        return this.tabs.unbind('click').bind('click', (e) => {
+          return this.show($(e.currentTarget).index());
+        });
+      }
+
+    };
+
+    Toggle.prototype.el = null;
+
+    Toggle.prototype.tabs = null;
+
+
+    return Toggle;
+
+  }).call(this);
+
+}).call(this);
+
+
+
+  	function animation_select_champ2(){
+  		main_bg.style.backgroundImage="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ),url('https://vnn-imgs-f.vgcloud.vn/2021/10/03/20/cong-an-tp-hcm-yeu-cau-cung-cap-thong-tin-nghe-si-lam-tu-thien-theo-phan-anh-cua-ba-nguyen-phuong-hang.jpeg')";
+$('#lock_champ').data('huhu', 'new2') ;
+enable_lock_champ_btn();
+document.getElementById('champ_img_bui').src="https://vnn-imgs-f.vgcloud.vn/2021/10/03/20/cong-an-tp-hcm-yeu-cau-cung-cap-thong-tin-nghe-si-lam-tu-thien-theo-phan-anh-cua-ba-nguyen-phuong-hang.jpeg";
+new Audio('musics/pick_champ.mp3').play();	
+  	}
+
+  		function animation_select_champ3(){
+  		main_bg.style.backgroundImage="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ),url('https://cdn.vietnammoi.vn/stores/news_dataimages/tuannh/082018/14/13/5020_thanh-chui-hai-phong-bi-hieu-nham-trai-thang-khi-yeu-mau-hong-ghet-su-gia-doi-7.jpg')";
+$('#lock_champ').data('huhu', 'new3') ;
+enable_lock_champ_btn();
+document.getElementById('champ_img_bui').src="https://cdn.vietnammoi.vn/stores/news_dataimages/tuannh/082018/14/13/5020_thanh-chui-hai-phong-bi-hieu-nham-trai-thang-khi-yeu-mau-hong-ghet-su-gia-doi-7.jpg";
+new Audio('musics/pick_champ.mp3').play();	
+  	}
+
+  	function animation_select_champ4(){
+  		main_bg.style.backgroundImage="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ),url('https://img.docbao.vn/2021/05/21/tran-duc-bo.jpg')";
+$('#lock_champ').data('huhu', 'new4') ;
+enable_lock_champ_btn();
+document.getElementById('champ_img_bui').src="https://img.docbao.vn/2021/05/21/tran-duc-bo.jpg";
+new Audio('musics/pick_champ.mp3').play();	
+  	}
+
+  	function animation_select_champ5(){
+  		main_bg.style.backgroundImage="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ),url('https://35express.org/wp-content/uploads/2021/12/tiktoker-huynh-dat-la-ai-1-35express.jpg')";
+$('#lock_champ').data('huhu', 'new5') ;
+enable_lock_champ_btn();
+document.getElementById('champ_img_bui').src="https://35express.org/wp-content/uploads/2021/12/tiktoker-huynh-dat-la-ai-1-35express.jpg";
+new Audio('musics/pick_champ.mp3').play();	
+  	}
+
+  	function animation_select_champ6(){
+  		main_bg.style.backgroundImage="linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ),url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDm6l1LdKNpfSKeswayiHqtyApLz6HW-e8A&usqp=CAU')";
+$('#lock_champ').data('huhu', 'new6') ;
+enable_lock_champ_btn();
+document.getElementById('champ_img_bui').src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDm6l1LdKNpfSKeswayiHqtyApLz6HW-e8A&usqp=CAU";
+new Audio('musics/pick_champ.mp3').play();	
+  	}
+
+
+
+
+  		$('#lock_champ').click(function() 
+  	{
+  		var huhu = $(this).data('huhu');
+switch (huhu) {
+  case 'new':
+  lockchamp1_success();
+    break;
+  case 'new2':
+     lockchamp2_success();
+    break;
+  case 'new3':
+    lockchamp3_success();
+    break;
+  case 'new4':
+lockchamp4_success();
+    break;
+  case 'new5':
+  lockchamp5_success();
+    break;
+  case 'new6':
+ lockchamp6_success();
+    break;
+  case  6:
+    day = "Saturday";
+}
+  	});
+
+      function disable_lock_champ_btn(){
+        document.getElementById('lock_champ').style.backgroundImage="url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/button-accept-disabled.png')";
+    document.getElementById('lock_champ_btn_text').style.filter="brightness(0.6)";
+    document.getElementById('lock_champ').style.pointerEvents='none'; 
+      }
+
+var lock_champ_success_sound = new Audio('musics/lock_champ_success.mp3');
+
+      function lockchamp1_success(){
+   document.getElementById('champs').style.visibility='hidden';
+   main_bg.style.boxShadow='none';
+    main_bg.classList.add('pick_champ_success_animate');
+    main_bg.style.backgroundImage="url('https://media.techz.vn/resize_x450x260/media2019/upload2019/2020/09/08/Dam-vinh-hung-vua-tiet-lo-ly-do-chia-tay-nguoi-yeu-cu-dan-mang-dong-long-ung-ho-6_08092020094302.jpg')"
+    $('#lock_champ').css('margin-top','220px');
+    disable_lock_champ_btn();
+    document.getElementById('video_champ').src="videos/dvh.mp4";
+    document.getElementById('status_champ_select').innerText="Taric";
+    lock_champ_success_sound.play();
+    auto_lock_champ1();
+    setTimeout(()=>{
+      $('#video_champ').transition('fade');
+    document.getElementById('video_champ').play();
+    document.getElementById('video_champ').onended=function(){
+       $('#video_champ').transition('fade');
+    }
+    },1000)
+}
+
+
+ function lockchamp2_success(){
+   document.getElementById('champs').style.visibility='hidden';
+   main_bg.style.boxShadow='none';
+    main_bg.classList.add('pick_champ_success_animate');
+    main_bg.style.backgroundImage="url('https://kenh14cdn.com/203336854389633024/2021/10/21/oct-21-2021-12-21-49-16347940329411875122059.gif.png')"
+    $('#lock_champ').css('margin-top','220px');
+    disable_lock_champ_btn();
+    document.getElementById('champ_img_bui').classList.add('pick_champ_success_animate');
+    document.getElementById('video_champ').src="videos/phuonghang.mp4";
+    document.getElementById('status_champ_select').innerText="Akali";
+    lock_champ_success_sound.play();
+    auto_lock_champ2();
+    setTimeout(()=>{
+      $('#video_champ').transition('fade');
+    document.getElementById('video_champ').play();
+    document.getElementById('video_champ').onended=function(){
+       $('#video_champ').transition('fade');
+    }
+    },1000)
+}
+
+
+function lockchamp3_success(){
+   document.getElementById('champs').style.visibility='hidden';
+   main_bg.style.boxShadow='none';
+    main_bg.classList.add('pick_champ_success_animate');
+    main_bg.style.backgroundImage="url('https://static.yeah1music.net/uploads/39/2019/09/13/5d7b4af95fa6e.jpg')"
+    $('#lock_champ').css('margin-top','220px');
+    disable_lock_champ_btn();
+    document.getElementById('champ_img_bui').classList.add('pick_champ_success_animate');
+    document.getElementById('video_champ').src="videos/pvt.mp4";
+    document.getElementById('status_champ_select').innerText="Yummi";
+    lock_champ_success_sound.play();
+    auto_lock_champ3();
+    setTimeout(()=>{
+      $('#video_champ').transition('fade');
+    document.getElementById('video_champ').play();
+    document.getElementById('video_champ').onended=function(){
+       $('#video_champ').transition('fade');
+    }
+    },1000)
+}
+
+
+function lockchamp4_success(){
+   document.getElementById('champs').style.visibility='hidden';
+   main_bg.style.boxShadow='none';
+    main_bg.classList.add('pick_champ_success_animate');
+    main_bg.style.backgroundImage="url('https://memedaily.vn/storage/meme/5799827b8699b2a844b7ad01bae6b536tran-duc-bo-chap-tay-a-men.jpg')"
+    $('#lock_champ').css('margin-top','220px');
+    disable_lock_champ_btn();
+    document.getElementById('champ_img_bui').classList.add('pick_champ_success_animate');
+    document.getElementById('video_champ').src="videos/tdb.mp4";
+    document.getElementById('status_champ_select').innerText="Akali";
+    lock_champ_success_sound.play();
+    auto_lock_champ4();
+    setTimeout(()=>{
+      $('#video_champ').transition('fade');
+    document.getElementById('video_champ').play();
+    document.getElementById('video_champ').onended=function(){
+       $('#video_champ').transition('fade');
+    }
+    },1000)
+}
+
+
+function lockchamp5_success(){
+   document.getElementById('champs').style.visibility='hidden';
+   main_bg.style.boxShadow='none';
+    main_bg.classList.add('pick_champ_success_animate');
+    main_bg.style.backgroundImage="url('https://i.ytimg.com/vi/mJpJhVTxtN0/maxresdefault.jpg')"
+    $('#lock_champ').css('margin-top','220px');
+    disable_lock_champ_btn();
+    document.getElementById('champ_img_bui').classList.add('pick_champ_success_animate');
+    document.getElementById('video_champ').src="videos/hd.mp4";
+    document.getElementById('status_champ_select').innerText="Varus";
+    lock_champ_success_sound.play();
+    auto_lock_champ5();
+    setTimeout(()=>{
+      $('#video_champ').transition('fade');
+    document.getElementById('video_champ').play();
+    document.getElementById('video_champ').onended=function(){
+       $('#video_champ').transition('fade');
+    }
+    },1000)
+}
+
+
+function lockchamp6_success(){
+   document.getElementById('champs').style.visibility='hidden';
+   main_bg.style.boxShadow='none';
+    main_bg.classList.add('pick_champ_success_animate');
+    main_bg.style.backgroundImage="url('https://taimeme.com/public/upload/memes/ngo-linh-ton-ngo-khong-co-khuon-mat-hoai-linh.jpg')"
+    $('#lock_champ').css('margin-top','220px');
+    disable_lock_champ_btn();
+    document.getElementById('video_champ').src="videos/hl.mp4";
+    document.getElementById('status_champ_select').innerText="Wukong";
+    lock_champ_success_sound.play();
+    auto_lock_champ1();
+    setTimeout(()=>{
+      $('#video_champ').transition('fade');
+    document.getElementById('video_champ').play();
+    document.getElementById('video_champ').onended=function(){
+       $('#video_champ').transition('fade');
+    }
+    },1000)
+}
+
+
+  </script>
+
+  <style type="text/css"
+  >
+
+  .pick_champ_success_animate{
+    margin-top: -13px;
+     animation-name: pick_champ_success;
+  animation-duration: 0.3s; 
+  filter: brightness(1);
+  border: 2px solid #2185d0;
+  animation-timing-function: ease-out; 
+  animation-delay: 0s;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+  }
+    @keyframes pick_champ_success{
+      0%{
+      }
+      100%{
+        border: 10px solid #2185d0;
+        filter: brightness(5.0) blur(5px);
+      }
+    }
+  </style>
+
+
+
+</div>
+
+	 </center>
+
+  <div id="leagues" class="ui visible left vertical inverted sidebar menu" style="width: 20vw;background: transparent;box-shadow: none;visibility: hidden;">
+  <div class="item" style="padding:15px;height: 90px;">
+  	
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+  	<div style="width: 30px;margin-left: 5px;">
+  		<img src="https://icon-library.com/images/ignite-icon/ignite-icon-6.jpg" style="width: 25px;height: 25px;">
+  		<img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width: 25px;height: 25px;margin-top: 5px;">
+  	</div>
+   <img class="img" id="champ_img_banhtetchien" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9xL7FimeN9h7k3788dvl8oJDbW7IuhtrfTmGybyeot-q2g14opTQzGXvWclsYbyoCr4&usqp=CAU" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 50px;margin-top: -80px;border: 3px solid #dcb639;object-fit: cover;">
+   <div class="content" style="margin-left: 120px;margin-top: -70px;">
+   	<p class="p1">Đang chọn...</p>
+   	<h5 style="margin-top:-10px">Bánh Tét Chiên</h5>
+   </div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+  	<div style="width: 30px;margin-left: 5px;">
+  		<img src="https://static.wikia.nocookie.net/leagueoflegends/images/4/4c/Teleport_HD.png/revision/latest/scale-to-width-down/256?cb=20210827153637" style="width: 25px;height: 25px;">
+  		<img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width: 25px;height: 25px;margin-top: 5px;">
+  	</div>
+   <img class="img" id="champ_img_cuongtinh" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9xL7FimeN9h7k3788dvl8oJDbW7IuhtrfTmGybyeot-q2g14opTQzGXvWclsYbyoCr4&usqp=CAU" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 50px;margin-top: -80px;border: 3px solid #dcb639;object-fit: cover;">
+   <div class="content" style="margin-left: 120px;margin-top: -70px;">
+   	<p class="p2">Đang chọn...</p>
+   	<h5 style="margin-top:-10px">Cường Tỉnh</h5>
+   </div>
+  </div>
+
+  <div id="bui_item" class="item" style="padding:15px;height: 90px;">
+  	<div style="height: 70px;width: 10px;background: yellow;margin-top: -5px;margin-left: -14px;"></div>
+  	<div style="width: 30px;margin-left: 5px;margin-top: -65px;">
+  		<img src="https://static.memrise.com/uploads/things/images/153645041_170724_2212_16.jpg" style="width: 25px;height: 25px;">
+  		<img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width: 25px;height: 25px;margin-top: 5px;">
+  	</div>
+  	<div id="magic_picking" style="background-image: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/npe-rewards-challenges-card-magic.png');width: 100%;height: 180px;margin-top: -165px;position: absolute;margin-left: -70px;z-index: -1;filter: brightness(1.2) ;background-repeat: no-repeat;"></div>
+   <img class="img" id="champ_img_bui" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9xL7FimeN9h7k3788dvl8oJDbW7IuhtrfTmGybyeot-q2g14opTQzGXvWclsYbyoCr4&usqp=CAU" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 50px;margin-top: -80px;border: 3px solid #dcb639;object-fit: cover;">
+   <div class="content" style="margin-left: 120px;margin-top: -70px;">
+   	<p class="p3" id="status_champ_select">Đang chọn...</p>
+   	<h5 style="margin-top:-10px">Bùi</h5>
+   </div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+  	<div style="width: 30px;margin-left: 5px;">
+  		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6Qszwnjmfr5mLC3OV2-Lm-9KqcRSWdpdw85GW2Xo_pDc51BZGfB0Sq4Ay299VVB3kIJs&usqp=CAU" style="width: 25px;height: 25px;">
+  		<img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width: 25px;height: 25px;margin-top: 5px;">
+  	</div>
+   <img class="img" id="champ_img_sacana" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9xL7FimeN9h7k3788dvl8oJDbW7IuhtrfTmGybyeot-q2g14opTQzGXvWclsYbyoCr4&usqp=CAU" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 50px;margin-top: -80px;border: 3px solid #dcb639;object-fit: cover;">
+   <div class="content" style="margin-left: 120px;margin-top: -70px;">
+   	<p class="p4">Đang chọn...</p>
+   	<h5 style="margin-top:-10px">Sa cà na</h5>
+   </div>
+  </div>
+
+   <div class="item" style="padding:15px;height: 90px;">
+  	<div style="width: 30px;margin-left: 5px;">
+  		<img src="https://static.wikia.nocookie.net/leagueoflegends/images/a/ab/Exhaust_HD.png/revision/latest/scale-to-width-down/128?cb=20210904010845" style="width: 25px;height: 25px;">
+  		<img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width: 25px;height: 25px;margin-top: 5px;">
+  	</div>
+   <img class="img" id="champ_img_lindanguyen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9xL7FimeN9h7k3788dvl8oJDbW7IuhtrfTmGybyeot-q2g14opTQzGXvWclsYbyoCr4&usqp=CAU" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 50px;margin-top: -80px;border: 3px solid #dcb639;object-fit: cover;">
+   <div class="content" style="margin-left: 120px;margin-top: -70px;">
+   	<p class="p5">Đang chọn...</p>
+   	<h5 style="margin-top:-10px">Linda Nguyễn</h5>
+   </div>
+  </div>
+  
+
+</div>
+
+<div class="ui container" style="width: 60vw;"></div>
+
+
+<div id="enemys" class="ui visible right vertical inverted sidebar  menu" style="width:20vw;background: transparent;box-shadow: none;visibility: hidden;">
+ 
+  <a class="item" style="padding:15px;height: 90px;">
+  	
+  </a>
+
+  <div class="item" style="padding:15px;height: 90px;">
+  	 <div class="content" style="margin-left: 50px;margin-top: 10px;">
+   	<p style="font-weight: bold;">ĐANG CHỌN...</p>
+   	<h5 style="margin-top:-10px;font-weight: lighter;">Người chơi 1</h5>
+   </div>
+   <div class="img" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 160px;margin-top: -53px;border: 3px solid #c80815;background: #1b1c1d;"></div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+  	 <div class="content" style="margin-left: 50px;margin-top: 10px;">
+   	<p style="font-weight: bold;">ĐANG CHỌN...</p>
+   	<h5 style="margin-top:-10px;font-weight: lighter;">Người chơi 2</h5>
+   </div>
+   <div class="img" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 160px;margin-top: -53px;border: 3px solid #c80815;background: #1b1c1d;"></div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+  	 <div class="content" style="margin-left: 50px;margin-top: 10px;">
+   	<p style="font-weight: bold;">ĐANG CHỌN...</p>
+   	<h5 style="margin-top:-10px;font-weight: lighter;">Người chơi 3</h5>
+   </div>
+   <div class="img" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 160px;margin-top: -53px;border: 3px solid #c80815;background: #1b1c1d;"></div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+  	 <div class="content" style="margin-left: 50px;margin-top: 10px;">
+   	<p style="font-weight: bold;">ĐANG CHỌN...</p>
+   	<h5 style="margin-top:-10px;font-weight: lighter;">Người chơi 4</h5>
+   </div>
+   <div class="img" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 160px;margin-top: -53px;border: 3px solid #c80815;background: #1b1c1d;"></div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+  	 <div class="content" style="margin-left: 50px;margin-top: 10px;">
+   	<p style="font-weight: bold;">ĐANG CHỌN...</p>
+   	<h5 style="margin-top:-10px;font-weight: lighter;">Người chơi 5</h5>
+   </div>
+   <div class="img" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 160px;margin-top: -53px;border: 3px solid #c80815;background: #1b1c1d;"></div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+$('#leagues .item')
+  .transition({
+    animation : 'fade right',
+    duration  : 800,
+    interval  : 300
+  })
+;
+setTimeout(()=>{
+$('#all').transition('fly up');
+$('#enemys').transition('fly left');
+},1800);
+
+
+//AUTO_SELECT_CHAMP_BOT
+function auto_select_champ_bot1(){
+  document.getElementById('champ_img_banhtetchien').src="https://vnn-imgs-f.vgcloud.vn/2021/10/03/20/cong-an-tp-hcm-yeu-cau-cung-cap-thong-tin-nghe-si-lam-tu-thien-theo-phan-anh-cua-ba-nguyen-phuong-hang.jpeg";
+  document.getElementById('champ_img_cuongtinh').src="https://cdn.vietnammoi.vn/stores/news_dataimages/tuannh/082018/14/13/5020_thanh-chui-hai-phong-bi-hieu-nham-trai-thang-khi-yeu-mau-hong-ghet-su-gia-doi-7.jpg";
+  document.getElementById('champ_img_sacana').src="https://img.docbao.vn/2021/05/21/tran-duc-bo.jpg";
+document.getElementById('champ_img_lindanguyen').src="https://35express.org/wp-content/uploads/2021/12/tiktoker-huynh-dat-la-ai-1-35express.jpg";
+}
+
+function auto_select_champ_bot2(){
+  document.getElementById('champ_img_banhtetchien').src="https://cdn.vietnammoi.vn/stores/news_dataimages/tuannh/082018/14/13/5020_thanh-chui-hai-phong-bi-hieu-nham-trai-thang-khi-yeu-mau-hong-ghet-su-gia-doi-7.jpg";
+  document.getElementById('champ_img_cuongtinh').src="https://img.docbao.vn/2021/05/21/tran-duc-bo.jpg";
+  document.getElementById('champ_img_sacana').src="https://35express.org/wp-content/uploads/2021/12/tiktoker-huynh-dat-la-ai-1-35express.jpg";
+document.getElementById('champ_img_lindanguyen').src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDm6l1LdKNpfSKeswayiHqtyApLz6HW-e8A&usqp=CAU";
+}
+
+function auto_select_champ_bot3(){
+  document.getElementById('champ_img_banhtetchien').src="https://img.docbao.vn/2021/05/21/tran-duc-bo.jpg";
+  document.getElementById('champ_img_cuongtinh').src="https://35express.org/wp-content/uploads/2021/12/tiktoker-huynh-dat-la-ai-1-35express.jpg";
+  document.getElementById('champ_img_sacana').src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDm6l1LdKNpfSKeswayiHqtyApLz6HW-e8A&usqp=CAU";
+document.getElementById('champ_img_lindanguyen').src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/10/30/4/0/0/1/1572405540270_600.jpg";
+}
+
+function auto_select_champ_bot4(){
+  document.getElementById('champ_img_banhtetchien').src="https://35express.org/wp-content/uploads/2021/12/tiktoker-huynh-dat-la-ai-1-35express.jpg";
+  document.getElementById('champ_img_cuongtinh').src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDm6l1LdKNpfSKeswayiHqtyApLz6HW-e8A&usqp=CAU";
+  document.getElementById('champ_img_sacana').src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/10/30/4/0/0/1/1572405540270_600.jpg";
+document.getElementById('champ_img_lindanguyen').src="https://vnn-imgs-f.vgcloud.vn/2021/10/03/20/cong-an-tp-hcm-yeu-cau-cung-cap-thong-tin-nghe-si-lam-tu-thien-theo-phan-anh-cua-ba-nguyen-phuong-hang.jpeg";
+}
+
+function auto_select_champ_bot5(){
+  document.getElementById('champ_img_banhtetchien').src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcDm6l1LdKNpfSKeswayiHqtyApLz6HW-e8A&usqp=CAU";
+  document.getElementById('champ_img_cuongtinh').src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/10/30/4/0/0/1/1572405540270_600.jpg";
+  document.getElementById('champ_img_sacana').src="https://vnn-imgs-f.vgcloud.vn/2021/10/03/20/cong-an-tp-hcm-yeu-cau-cung-cap-thong-tin-nghe-si-lam-tu-thien-theo-phan-anh-cua-ba-nguyen-phuong-hang.jpeg";
+document.getElementById('champ_img_lindanguyen').src="https://cdn.vietnammoi.vn/stores/news_dataimages/tuannh/082018/14/13/5020_thanh-chui-hai-phong-bi-hieu-nham-trai-thang-khi-yeu-mau-hong-ghet-su-gia-doi-7.jpg";
+}
+
+
+function time_ready(){
+  var i = 21; 
+   var time_ready_out= setInterval(()=>{
+     i--;
+     document.getElementById('rew').innerText = i;
+       if(i==-1){
+  clearInterval(time_ready_out);
+  document.getElementById('rew').innerText="0";
+  location.reload();
+    }
+    },1000);
+}
+
+function auto_lock_champ1(){
+  $('#enemys p').text('SẴN SÀNG');
+  $('#enemys .img').addClass('pick_champ_success_animate');
+   $('#leagues .img').addClass('pick_champ_success_animate');
+    $('#leagues .p1').text('Akali');
+      $('#leagues .p2').text('Yummi');
+          $('#leagues .p4').text('Rengar');
+            $('#leagues .p5').text('Varus');
+            $('#all span').text('SẴN SÀNG');
+}
+
+function auto_lock_champ2(){
+  $('#enemys p').text('SẴN SÀNG');
+  $('#enemys .img').addClass('pick_champ_success_animate');
+   $('#leagues .img').addClass('pick_champ_success_animate');
+    $('#leagues .p1').text('Yummi');
+      $('#leagues .p2').text('Rengar');
+          $('#leagues .p4').text('Varus');
+            $('#leagues .p5').text('Wukong');
+            $('#all span').text('SẴN SÀNG');
+            time_ready();
+}
+
+function auto_lock_champ3(){
+  $('#enemys p').text('SẴN SÀNG');
+  $('#enemys .img').addClass('pick_champ_success_animate');
+   $('#leagues .img').addClass('pick_champ_success_animate');
+    $('#leagues .p1').text('Rengar');
+      $('#leagues .p2').text('Varus');
+          $('#leagues .p4').text('Wukong');
+            $('#leagues .p5').text('Taric');
+            $('#all span').text('SẴN SÀNG');
+            time_ready();
+
+}
+
+function auto_lock_champ4(){
+  $('#enemys p').text('SẴN SÀNG');
+  $('#enemys .img').addClass('pick_champ_success_animate');
+   $('#leagues .img').addClass('pick_champ_success_animate');
+    $('#leagues .p1').text('Varus');
+      $('#leagues .p2').text('Wukong');
+          $('#leagues .p4').text('Taric');
+            $('#leagues .p5').text('Akali');
+            $('#all span').text('SẴN SÀNG');
+            time_ready();
+ 
+}
+
+function auto_lock_champ5(){
+  $('#enemys p').text('SẴN SÀNG');
+  $('#enemys .img').addClass('pick_champ_success_animate');
+   $('#leagues .img').addClass('pick_champ_success_animate');
+    $('#leagues .p1').text('Wukong');
+      $('#leagues .p2').text('Taric');
+          $('#leagues .p4').text('Akali');
+            $('#leagues .p5').text('Yummi');
+            $('#all span').text('SẴN SÀNG');
+            time_ready();
+}
+ 
+</script>
+
+
+</div>
+	
+
+</body>
+</html-->
+
+

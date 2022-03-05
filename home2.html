@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Liên minh huyền thoại</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/LoL_icon.svg/256px-LoL_icon.svg.png" type="image/gif" sizes="100x100">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+<link rel="stylesheet" href="css/home2.css">
+</head>
+
+<body style="overflow: hidden;background-color: black;">
+<div id="index">
+<img class="main_bg" src="images/background-flow.png" >
+
+<div class="ui segment" style="background: transparent;border: 0;box-shadow: none;">
+  <div class="ui two column grid">
+    <div class="column" style="width: 80%;padding: 0;">
+      
+<div class="ui inverted secondary  menu" style="height: 40px;">
+	
+	<div class="item" id="logo_item">
+	 <img id="logo" src="https://emoji.gg/assets/emoji/3907_lol.png" style="width: 45px;height: 45px;transition: 1s;">
+    <img id="team_btn" src="https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/play-button-disabled.png" style="width: auto;margin-left: -23px;height: 55px;">
+    <h5 style="position: absolute;margin-top: -2px;margin-left: 73px;pointer-events: none;font-size: 1.6ch;color: grey;">LOBBY</h5>
+	</div>
+  <a href="index.html" class=" item" style="color:#f5edae">
+    HOME
+  </a>
+  <a class="item" style="color:#f5edae">
+    ĐTCL
+  </a>
+
+
+  <div class="right menu" >
+    <a class="item" style="color:#f5edae;margin-right: -10px">
+     <i class="user large circle icon"></i>
+    </a>
+    <a class="item" style="color:#f5edae;margin-right: -10px">
+    	<i class="large briefcase icon"></i>
+    </a>
+     <a class="item" style="color:#f5edae;margin-right: -10px">
+    	<i class="large gavel icon"></i>
+    </a>
+     <a class="item" style="color:#f5edae;margin-right: -10px">
+    	<i class="large suitcase icon"></i>
+    </a>
+    <a class="item" style="color:#f5edae;margin-right: -10px">
+    	<i class="large coins icon"></i>
+    </a>
+
+    <div class="item" style="border-left: 0.5px solid #f5edae;border-radius: unset;margin-right: -30px;height: 40px ;">
+      
+    </div>
+
+    <div class="item" style="padding:0">
+
+<div class="ui center aligned basic segment">
+    <img src="https://elojobhigh.com.br/assets/img/icone-riot-points.png" style="width:17px;height: 17px;filter: brightness(10.0);"> 12000
+  <div class="ui horizontal divider" style="display: none;">
+  </div><br>
+ <img src="https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/be-icon.png" style="width:17px;height: 17px;margin-top: 5px;"> 4800
+</div>
+
+
+    </div>
+  </div>
+</div>
+<div style="width: 100vw;background: rgba(133, 134, 51, 0.8);;height: 0.1px;margin-top: -4px;"></div>
+
+
+<main class="ui center aligned container">
+
+
+<center>
+
+
+  
+  <img src="https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/current-player-banner.png" style="width: 210px;height: 370px; image-rendering: pixelated;image-rendering: -webkit-optimize-contrast;  -ms-interpolation-mode:  nearest;image-rendering: -moz-crisp-edges;margin-top: 20px;position: absolute;margin-left: -75px;" id="flag_user">
+
+
+  <img id="flag_ava_user" src="images/bui_avatar.png" style="position: relative;margin-top: 45px;border-radius: 100%;width: 60px;height: 60px;transition: 0.4s;">
+
+  <img id="chalenge_border" src="https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/ranked-emblem/wings/wings_challenger.png" style="position: fixed;width: 170px;height: 230px;margin-top: -80px;margin-left: -115px;display: none;">
+
+
+  <h3 style="color: white;position: relative;">Bùi</h3>
+
+
+
+
+  <div id="findmatch" style="cursor: pointer;">
+  <h3 id="find_m_btn_text" style="position:relative;top:22px;color:white;pointer-events: none;font-size: 1.5ch;">TÌM TRẬN</h3>
+</div>
+
+</center>
+
+
+<div id="success_fm" class="ui modal" style="background:transparent;border-radius:100%;width: 480px;height: 480px;position: absolute;border: 1.5px solid #a38b00;">
+  
+ <p id="time2" style="display: none;"></p>
+
+ <audio style="display: none;" id="success_fm_sound">
+   <source src="musics/success_fm.mp3" type="">
+ </audio> 
+
+<div style="height: 395px;width: 395px;border-radius: 100%;background: transparent;position: absolute;margin-left: 43px;margin-top: 43px;border: 1.5px solid #a38b00;"></div>
+
+ <div class="circular2">
+            <div class="inner"></div>
+            <div class="outer"></div>
+            <div class="circle">
+               <div class="bar left">
+                  <div class="progress" id="progress_left"></div>
+               </div>
+               <div class="bar right">
+                  <div class="progress" id="progress_right"></div>
+               </div>
+            </div>
+         </div>
+
+
+ <center style="position: relative;margin-top: 170px;z-index: 2;">
+  <img id="map_fm_success" src="images/game-select-icon-hover.png" class="ui image" style="width: 90px;height: 90px;transition: transform 0.4s;">
+  <h2 class="ui header" id="find_m_status" style="color:white;;margin-top: 10px;transition: 1s all;font-size: 2.5ch;">ĐÃ TÌM THẤY 4 THẰNG NGU !</h2>
+  <div id="accept_match" style="cursor: pointer;">
+  <h3 id="accept_m_btn_text" style="position:relative;top:22px;color:white;pointer-events: none;font-size: 2ch;">QUẤT LUN !</h3>
+</div>
+
+  <audio style="display: none;" id="accept_m">
+    <source src="musics/accept_m.mp3" type="">
+  </audio>
+
+</center> 
+
+<center><button  style="margin-top:15px;font-weight: bold;width: 120px;color: white;background: #2d2c2f;border: 2.5px solid #a38b00;border-radius: unset;height: 30px;font-size: 1.5ch;">THÔI TÉ</button></center>
+
+
+ </div>
+
+
+
+
+</main>
+
+    </div>
+
+
+
+    <div class="column" style="width: 20%;padding: 0;">
+     
+<div id="main_sidebar" class="ui visible right sidebar inverted vertical menu" style="width: 220px;background: #142030;overflow-x: hidden;">
+  <a class=" item" style="height: 70px;padding: 14px;">
+    <img src="images/bui_avatar.png" class="ui avatar left floated image" style="transform: scale(1.8);border: 3px solid #55aabb;margin-top: 3px;margin-left: 6px;">
+    <h4 class="ui center aligned inverted header" style="margin-top: 2px;margin-right: 30px;">Bùi 
+    </h4>
+
+    <p style="font-size: 11px;font-weight: lighter;color: greenyellow;margin-top: -15px;margin-left: 58px;"> <span  class="ui green empty mini circular label"></span> Đang tạo trận X... <i style="color:white;margin-left: 10px;" class="bell icon"></i></p>
+
+  </a>
+  <div style="height:5px;width:100%;background:rgba(133, 134, 51, 0.8);margin-top: -6px;"></div>
+  <a class="item" style="padding: 0;position: absolute;" id="party">
+   <img src="https://scontent.fdad1-1.fna.fbcdn.net/v/t1.15752-9/272109569_1301891390278711_7748648182091800439_n.png?_nc_cat=103&ccb=1-5&_nc_sid=ae9488&_nc_ohc=-bIyKz2bhr4AX_pAXHa&_nc_ht=scontent.fdad1-1.fna&oh=03_AVJYAw29hGKB0fFBXY4uFd7XEP-r30qVgAH_K-19z1ktwA&oe=624803E5" style="height: 85px;width: 100vw;">
+
+<a class="item" id="time_findmatch" style="height: 90px;padding: 10px;background-image: url('https://wallpapermemory.com/uploads/222/fiddlesticks-league-of-legends-background-hd-1600x768-172199.jpg');filter: brightness(1.2);position: relative;margin-top: -5px;visibility: hidden;">
+   ĐANG TÌM TRẬN <img src="images/game-select-icon.png" class="ui mini image" style="margin-top: 10px;"> <h1 style="margin-top:-40px;margin-left: 50px;" id="time">0:00</h1><p style="margin-top:-20px;font-size: small;margin-left: 45px;color: skyblue;">Tối thiếu: 1:00</p> 
+  </a>
+
+
+  </a>
+
+  <a class="item" style="font-size:1.4ch">
+    CỘNG ĐỒNG
+    <i class="search icon"></i>
+    <i class="list icon"></i>
+    <i class="folder plus icon"></i>
+    <i class="user friends icon"></i>
+  </a>
+
+   <a class="item" style="font-size:1.5ch;color:#dcb639;">
+    Yêu cầu kết bạn
+    <div class="ui tiny label" style="background:#dcb639">7</div>
+  </a>
+
+</div>
+
+    </div>
+  </div>
+ 
+</div>
+
+
+</div>
+
+
+
+
+
+<video onvolumechange="0.1" id="video_fm_success" style="position: fixed;width: 100%;height:100%;top: 0;object-fit: cover;image-rendering: pixelated;display: none;">
+  <source src="videos/tes3.mp4" type="video/mp4">
+</video>
+
+
+<!-- IN_GAME_SELECT_PAGE -->
+ <div id="select_champ"  style="overflow: hidden;display: none;">
+
+  <img src="images/map-champ-select2.png" alt="" style="object-fit: cover;position: absolute;width: 100%;height: 100%;">
+
+    <center id="all" style="visibility: hidden;position: relative;" ><div style="height: 90px;width: 60vw;background:transparent;color: white;font-size: 3.5ch;padding: 20px;font-weight: bold;"><span>CHỌN TƯỚNG !</span> 
+      
+<h1 id="rew" style="margin-top:0px"></h1>
+
+
+    </div>
+
+<div id="main_bg" class="ui container" style="width: 60vw;height: 380px;box-shadow: inset 0px 0px 30px 30px rgba(0, 0, 0, 0.4);-webkit-border-radius: 5px;background-repeat: no-repeat;background-size: cover ;overflow-y: scroll;overflow-x: hidden;object-fit: contain;
+ ">
+
+ <video id="video_champ" style="position: fixed;height: 100%;width: 100%;transform: translateX(-50%);object-fit: content;display: none;">
+   <source type="">
+ </video>
+
+
+<div id="champs" class="ui inverted six doubling mini cards" style="padding: 20px;margin-left: -10px;justify-content: center">
+
+
+</div>
+
+
+
+</div>
+
+<div id="lock_champ" data-huhu="0">
+  <h3 id="lock_champ_btn_text" style="position:relative;top:22px;color:white;pointer-events: none;font-size: 2ch;filter: brightness(0.6);">KHÓA</h3>
+</div>
+
+   </center>
+
+  <div id="leagues" class="ui visible left vertical inverted sidebar menu" style="width: 20vw;background: transparent;box-shadow: none;visibility: hidden;">
+  <div class="item" style="padding:15px;height: 90px;">
+    
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+    <div style="width: 30px;margin-left: 5px;">
+      <img src="https://icon-library.com/images/ignite-icon/ignite-icon-6.jpg" style="width: 25px;height: 25px;">
+      <img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width: 25px;height: 25px;margin-top: 5px;">
+    </div>
+   <img class="img" id="champ_img_banhtetchien" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9xL7FimeN9h7k3788dvl8oJDbW7IuhtrfTmGybyeot-q2g14opTQzGXvWclsYbyoCr4&usqp=CAU" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 50px;margin-top: -80px;border: 3px solid #dcb639;object-fit: cover;">
+   <div class="content" style="margin-left: 120px;margin-top: -70px;">
+    <p class="p1">Đang chọn...</p>
+    <h5 style="margin-top:-10px">Bánh Tét Chiên</h5>
+   </div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+    <div style="width: 30px;margin-left: 5px;">
+      <img src="data:image/jpeg;base64,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" style="width: 25px;height: 25px;">
+      <img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width: 25px;height: 25px;margin-top: 5px;">
+    </div>
+   <img class="img" id="champ_img_cuongtinh" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9xL7FimeN9h7k3788dvl8oJDbW7IuhtrfTmGybyeot-q2g14opTQzGXvWclsYbyoCr4&usqp=CAU" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 50px;margin-top: -80px;border: 3px solid #dcb639;object-fit: cover;">
+   <div class="content" style="margin-left: 120px;margin-top: -70px;">
+    <p class="p2">Đang chọn...</p>
+    <h5 style="margin-top:-10px">Cường Tỉnh</h5>
+   </div>
+  </div>
+
+  <div id="bui_item" class="item" style="padding:15px;height: 90px;">
+    <div style="height: 70px;width: 10px;background: yellow;margin-top: -5px;margin-left: -14px;"></div>
+    <div style="width: 30px;margin-left: 5px;margin-top: -65px;">
+      <img src="https://static.memrise.com/uploads/things/images/153645041_170724_2212_16.jpg" style="width: 25px;height: 25px;">
+      <img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width: 25px;height: 25px;margin-top: 5px;">
+    </div>
+    <div id="magic_picking" style="background-image: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/npe-rewards-challenges-card-magic.png');width: 100%;height: 180px;margin-top: -165px;position: absolute;margin-left: -70px;z-index: -1;filter: brightness(1.2) ;background-repeat: no-repeat;"></div>
+   <img class="img" id="champ_img_bui" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9xL7FimeN9h7k3788dvl8oJDbW7IuhtrfTmGybyeot-q2g14opTQzGXvWclsYbyoCr4&usqp=CAU" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 50px;margin-top: -80px;border: 3px solid #dcb639;object-fit: cover;">
+   <div class="content" style="margin-left: 120px;margin-top: -70px;">
+    <p class="p3" id="status_champ_select">Đang chọn...</p>
+    <h5 style="margin-top:-10px">Bùi</h5>
+   </div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+    <div style="width: 30px;margin-left: 5px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6Qszwnjmfr5mLC3OV2-Lm-9KqcRSWdpdw85GW2Xo_pDc51BZGfB0Sq4Ay299VVB3kIJs&usqp=CAU" style="width: 25px;height: 25px;">
+      <img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width: 25px;height: 25px;margin-top: 5px;">
+    </div>
+   <img class="img" id="champ_img_sacana" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9xL7FimeN9h7k3788dvl8oJDbW7IuhtrfTmGybyeot-q2g14opTQzGXvWclsYbyoCr4&usqp=CAU" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 50px;margin-top: -80px;border: 3px solid #dcb639;object-fit: cover;">
+   <div class="content" style="margin-left: 120px;margin-top: -70px;">
+    <p class="p4">Đang chọn...</p>
+    <h5 style="margin-top:-10px">Sa cà na</h5>
+   </div>
+  </div>
+
+   <div class="item" style="padding:15px;height: 90px;">
+    <div style="width: 30px;margin-left: 5px;">
+      <img src="http://pm1.narvii.com/5951/a37f7be3f73238032921ae05e60499cf96e62e97_hq.jpg" style="width: 25px;height: 25px;">
+      <img src="https://www.hiepsibaotap.com/wp-content/uploads/2018/11/Flash_HD.png" style="width: 25px;height: 25px;margin-top: 5px;">
+    </div>
+   <img class="img" id="champ_img_lindanguyen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ9xL7FimeN9h7k3788dvl8oJDbW7IuhtrfTmGybyeot-q2g14opTQzGXvWclsYbyoCr4&usqp=CAU" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 50px;margin-top: -80px;border: 3px solid #dcb639;object-fit: cover;">
+   <div class="content" style="margin-left: 120px;margin-top: -70px;">
+    <p class="p5">Đang chọn...</p>
+    <h5 style="margin-top:-10px">Linda Nguyễn</h5>
+   </div>
+  </div>
+  
+
+</div>
+
+<div class="ui container" style="width: 60vw;"></div>
+
+
+<div id="enemys" class="ui visible right vertical inverted sidebar  menu" style="width:20vw;background: transparent;box-shadow: none;visibility: hidden;">
+ 
+  <a class="item" style="padding:15px;height: 90px;">
+    
+  </a>
+
+  <div class="item" style="padding:15px;height: 90px;">
+     <div class="content" style="margin-left: 50px;margin-top: 10px;">
+    <p style="font-weight: bold;">ĐANG CHỌN...</p>
+    <h5 style="margin-top:-10px;font-weight: lighter;">Người chơi 1</h5>
+   </div>
+   <div class="img" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 160px;margin-top: -53px;border: 3px solid #c80815;background: #1b1c1d;"></div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+     <div class="content" style="margin-left: 50px;margin-top: 10px;">
+    <p style="font-weight: bold;">ĐANG CHỌN...</p>
+    <h5 style="margin-top:-10px;font-weight: lighter;">Người chơi 2</h5>
+   </div>
+   <div class="img" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 160px;margin-top: -53px;border: 3px solid #c80815;background: #1b1c1d;"></div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+     <div class="content" style="margin-left: 50px;margin-top: 10px;">
+    <p style="font-weight: bold;">ĐANG CHỌN...</p>
+    <h5 style="margin-top:-10px;font-weight: lighter;">Người chơi 3</h5>
+   </div>
+   <div class="img" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 160px;margin-top: -53px;border: 3px solid #c80815;background: #1b1c1d;"></div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+     <div class="content" style="margin-left: 50px;margin-top: 10px;">
+    <p style="font-weight: bold;">ĐANG CHỌN...</p>
+    <h5 style="margin-top:-10px;font-weight: lighter;">Người chơi 4</h5>
+   </div>
+   <div class="img" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 160px;margin-top: -53px;border: 3px solid #c80815;background: #1b1c1d;"></div>
+  </div>
+
+  <div class="item" style="padding:15px;height: 90px;">
+     <div class="content" style="margin-left: 50px;margin-top: 10px;">
+    <p style="font-weight: bold;">ĐANG CHỌN...</p>
+    <h5 style="margin-top:-10px;font-weight: lighter;">Người chơi 5</h5>
+   </div>
+   <div class="img" style="width: 60px;height: 60px;border-radius: 100%;margin-left: 160px;margin-top: -53px;border: 3px solid #c80815;background: #1b1c1d;"></div>
+  </div>
+
+</div>
+
+
+</div>
+
+
+</body>
+
+
+
+
+</html>
+<script type="text/javascript" src="./js/findmatch.js"></script>
+<script type="text/javascript" src="./js/in_game_selecting.js"></script>
+<script type="text/javascript" src="./js/champ_list.js"></script>
+
+  
+
+            
+      

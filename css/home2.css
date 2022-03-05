@@ -1,0 +1,185 @@
+#findmatch {
+    background-image: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/play-button-lobby-default.png');width: 160px;height: 62px;transform: scale(1);
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: optimizeQuality;
+    -ms-interpolation-mode:  nearest;
+    margin-top: 280px;
+
+  }
+  #findmatch:hover {
+   background-image: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/play-button-lobby-hover.png');
+  }
+  .flag_user_anima{
+    transition: 0.4s;
+    transform: translateY(-15px);
+    animation: bright 3s;
+    animation-timing-function: linear;
+     animation-iteration-count: infinite;
+  }
+  @keyframes bright{
+    0%{
+filter: brightness(1);
+    }
+    50%{
+filter: brightness(1.8);
+    }
+    100%{
+filter: brightness(1);
+    }
+  }
+  #accept_match {
+    background-image: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/button-accept-default.png');width: 210px;height: 62px;
+    image-rendering: optimizeQuality;
+    -ms-interpolation-mode:  nearest;
+    margin-top: 83px;
+
+  }
+  #accept_match:hover {
+   background-image: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/button-accept-hover.png');
+  }
+  .circular2{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    transform: scale(4.5);
+    margin-left: 190px;
+    margin-top: 190px;  
+  
+  }
+  .circular2 .inner, .circular2 .outer, .circular2 .circle{
+    position: absolute;
+    z-index: 6;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.2);
+  }
+  .circular2 .inner{
+    top: 50%;
+    left: 50%;
+    height: 80px;
+    width: 80px;
+    margin: -40px 0 0 -40px;
+    background-image: url('https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/content/src/leagueclient/gamemodeassets/classic_sru/img/parties-background.jpg');
+    border-radius: 100%;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    border: 0.2px solid #a38b00;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+  .circular2 .circle{
+    z-index: 1;
+    box-shadow: none;
+    transform: scale(0.87);
+  }
+  
+  .circular2 .bar{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border-radius: 100%;
+    clip: rect(0px, 100px, 100px, 50px);
+  }
+  .circle .bar .progress{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    clip: rect(0px, 50px, 100px, 0px);
+    transition: filter 0.4s;
+  }
+  .circle .bar .progress, .dot span{
+    background-image: url('https://img.freepik.com/fotos-gratis/fumaca-azul-em-fundo-preto_172251-1090.jpg?size=626&ext=jpg');
+  }
+  .circle .left .progress{
+    z-index: 1;
+  }
+  
+  .trans-left{
+    animation: left 2s linear both;
+  }
+  .trans-right{
+    animation: right 3s linear both;
+  }
+  
+  @keyframes left {
+    100%{
+      transform: rotate(180deg);
+    }
+  }
+  .circle .right{
+    z-index: 3;
+    transform: rotate(180deg);
+  }
+  
+  @keyframes right {
+    100%{
+      transform: rotate(180deg);
+    }
+  }
+  #lock_champ {
+    background-image: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/button-accept-disabled.png');
+        width: 210px;height: 62px;
+        transition: 0.2s ;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: optimizeQuality;
+        -ms-interpolation-mode:  nearest;
+        margin-top: 10px;
+    transform: scale(0.8);
+    pointer-events: none;
+    
+      }
+      .pick_champ_success_animate{
+        margin-top: -13px;
+         animation-name: pick_champ_success;
+      animation-duration: 0.3s; 
+      filter: brightness(1);
+      border: 2px solid #2185d0;
+      animation-timing-function: ease-out; 
+      animation-delay: 0s;
+      animation-direction: alternate;
+      animation-iteration-count: 2;
+      border-radius: 50%;
+      transition: border-radius 1s;
+      } 
+        @keyframes pick_champ_success{
+          0%{
+          }
+          100%{
+            border: 10px solid #2185d0;
+            filter: brightness(5.0) blur(5px);
+          }
+        }
+    
+        .selecting_item_animation{
+          animation: selecting_item_animation 1.5s;
+          animation-timing-function: linear;
+           animation-iteration-count: infinite;
+             animation-direction: alternate;
+        }
+        @keyframes selecting_item_animation{
+          0%{
+    filter: brightness(1);
+          }
+          100%{
+            filter: brightness(2.5);
+          }
+        }
+    
+    
+         @media all and (max-width: 760px) {
+    #index{
+      display: none;
+    }
+    #select_champ{
+      display: none;
+    }
+    
+    }
+    .main_bg{
+        position: absolute;overflow: hidden;top:0;width: 100%;height: 100%;filter: brightness(0.8);
+    }
