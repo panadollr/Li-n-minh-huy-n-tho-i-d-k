@@ -1,4 +1,6 @@
  const main_bg =document.getElementById('main_bg');
+ var nhaccuong = new Audio('musics/Messenger.mp3');
+ $('#border_champ_bg_pick').addClass('spin_anime')
   
 //LOCK_CHAMP_BUTTON_ANIMATION
   function enable_lock_champ_btn(){
@@ -7,7 +9,7 @@
   
   function animation_select_champ(id){
        auto_select_champ_bot(id);
-      $(main_bg).css('background',"linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ),url('"+allChamp[id].img+"')");
+      $('#champ_bg_pick').css('background',"url('"+allChamp[id].img_lock+"') no-repeat").css('background-size','cover');
       $('#lock_champ').data('huhu', id).css('cursor','pointer'); 
       enable_lock_champ_btn();
      document.getElementById('champ_img_bui').src =allChamp[id].img;
@@ -43,11 +45,6 @@
           for (let i = 0; i < allChamp.length; i++) {
 if(id == i) {
   animation_select_champ(id)
-}
-else if(id==4){
-       $(main_bg).css('background',"linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ),url('"+allChamp[4].img+"')");
-      $('#lock_champ').data('huhu', 4);
-     document.getElementById('champ_img_bui').src =allChamp[4].img;
 }
 
 }       
@@ -90,25 +87,29 @@ var lock_champ_success_sound = new Audio('musics/lock_champ_success.mp3');
 
  function lockchamp_success(huhu){
       auto_lock_champ(huhu);
- $(main_bg).css('background',"url('"+allChamp[huhu].img_lock+"')");
     disable_lock_champ_btn();
     document.getElementById('video_champ').src=allChamp[huhu].video;
     $('#status_champ_select').text(allChamp[huhu].name);
     lock_champ_success_sound.play();
+   var lock_champ_s= new Audio('musics/lock_champ_sound.mp3')
+    setTimeout(()=>{
+      lock_champ_s.play();
+    },1000)
+    lock_champ_s.onended =function(){
+      $('#video_champ').fadeIn('fast').trigger('play');
+    }
+   
     $('#champs').fadeOut('fast')
     $('#main_bg').css('overflow-y','hidden');
     setTimeout(()=>{
       $("#main_bg").animate({ scrollTop: 0 }, "fast");
 },300);
 
-
-    setTimeout(()=>{
-  $('#video_champ').fadeIn('fast').trigger('play');
     $('#video_champ').on('ended',function(){
        $(this).fadeOut('fast');
  reset_lock_champ();
     })
-    },1000);
+  
 
    }
 
@@ -149,12 +150,23 @@ else if(id >=(allChamp.length/2)){
 }
 
 function pick_champ_success_animation(){
-   $(main_bg).addClass('pick_champ_success_animate').css('box-shadow','none');
      nhaccuong.pause();
+     $('#position_menu').hide();
+     $('#border_champ_bg_pick').transition('pulse');
+     $('#champ_bg_pick').addClass('bright_img_pick_success_anime')
+     setTimeout(()=>{
+$('#border_champ_bg_pick').addClass('spin_anime_pick_success')
+$('#border_champ_bg_pick').removeClass('spin_anime')
+     },1000)
+
       $('#bui_item').removeClass('selecting_item_animation');
 }
 
 function disable_pick_champ_success_animation(){
+  $('#position_menu').show();
+  $('#champ_bg_pick').removeClass('bright_img_pick_success_anime')
+  $('#border_champ_bg_pick').removeClass('spin_anime_pick_success')
+$('#border_champ_bg_pick').addClass('spin_anime')
   $('#enemys .img').removeClass('pick_champ_success_animate');
    $('#leagues .img').removeClass('pick_champ_success_animate');
    main_bg.classList.remove('pick_champ_success_animate');
@@ -192,7 +204,7 @@ function reset_lock_champ() {
     $('#all span').text('CHỌN TƯỚNG !');
         //clearInterval(time_ready_out);
   $('#leagues p').text("Đang chọn...");
- $(main_bg).css('background',"transparent").css('boxShadow',"inset 0px 0px 30px 30px rgba(0, 0, 0, 0.4)");
+ //$(main_bg).css('background',"transparent").css('boxShadow',"inset 0px 0px 30px 30px rgba(0, 0, 0, 0.4)");
   $('#champs').fadeIn('fast')
   $('#main_bg').css('overflow-y','scroll');
      nhaccuong.play();

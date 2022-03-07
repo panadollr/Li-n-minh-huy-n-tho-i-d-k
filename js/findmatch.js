@@ -110,16 +110,9 @@ $('#leagues .item')
 
       setTimeout(()=>{
 $('#all').transition('fade up');
-/*setTimeout(()=>{
-$('#champs .card')
-  .transition({
-    animation : 'fade up',
-    duration  : 150,
-    interval  : 50
-  });
-
-},500);*/
 $('#enemys').transition('fade left');
+setTimeout(()=>{
+  $('#border_champ_bg_pick').fadeIn('fast') },100)
 new Audio('musics/show_champs.mp3').play();
 setTimeout(()=>{
     nhaccuong.play();

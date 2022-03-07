@@ -24,9 +24,12 @@
  <div id="select_champ"  style="overflow: hidden;">
 
   <img src="images/map-champ-select2.png" alt="" style="object-fit: cover;position: absolute;width: 100%;height: 100%;">
-
-    <center id="all" style="position: relative;" ><div style="height: 90px;width: 60vw;background:transparent;color: white;font-size: 3.5ch;padding: 20px;font-weight: bold;"><span>CHỌN TƯỚNG !</span> 
-        <div id="position_menu" class="ui inverted menu" style="margin-top: 30px;width: 60vw;margin-left: -20px;border-radius: unset;;height: 30px;background: rgba(0, 0, 0, 0.6);">
+ <center><img class="ah" id="border_champ_bg_pick" src="https://www.nicepng.com/png/full/13-134224_weaknesses-circle.png" style="filter: brightness(1.5);position: fixed;object-fit: contain;margin-top: -70px;justify-content: center;margin-left: -383px;height: 730px;z-index: 2;;" alt="">
+<div id="champ_bg_pick" style="transform: translateY(-14px);z-index: 1;justify-content: center;margin: 0 auto;right: 0;left: 0;height: 620px;position: fixed;width: 620px;border-radius: 100%;background-size: cover;"></div>
+</center> 
+  
+    <center id="all" style="z-index: 3;position: relative;" ><div style="height: 90px;width: 60vw;background:transparent;color: white;font-size: 3.5ch;padding: 20px;font-weight: bold;"><span>CHỌN TƯỚNG !</span> 
+        <div id="position_menu" class="ui inverted menu" style="margin-top: 30px;width: 48vw;border-radius: unset;;height: 30px;background: rgba(0, 0, 0, 0.8);">
             <div id="all_lane" class="active item" style="cursor: pointer;border-radius: unset;">
                ALL
               </div>
@@ -58,17 +61,16 @@
 <h1 id="rew" style="margin-top:0px"></h1>
     </div>
 
-<div id="main_bg" class="ui container" style="margin-top: 20px;width: 60vw;height: 380px;box-shadow: inset 0px 0px 30px 30px rgba(0, 0, 0, 0.4);-webkit-border-radius: 5px;background-repeat: no-repeat;background-size: cover ;overflow-y: scroll;overflow-x: hidden;object-fit: contain;
+<div id="main_bg" class="ui container" style="margin-top: 20px;width: 48vw;height: 380px;-webkit-border-radius: 5px;background-repeat: no-repeat;background-size: cover ;overflow-y: scroll;overflow-x: hidden;object-fit: contain;
  ">
 
 
- <video id="video_champ" style="position: fixed;height: 100%;width: 100%;transform: translateX(-50%);object-fit: content;display: none;">
-   <source type="">
+ <video id="video_champ" style="z-index: -3;margin-top: -125px;margin-left: -1px;position: fixed;height: 620px;width: 620px;transform: translateX(-50%);object-fit: contain;border-radius: 100%;display:none">
+   <source type="" >
  </video>
 
 
-<div id="champs" class="ui inverted six doubling mini cards" style="padding: 20px;margin-left: -10px;justify-content: center">
-
+<div id="champs" class="ui inverted five doubling mini cards" style="margin-top:0px;justify-content: center">
 
 </div>
 

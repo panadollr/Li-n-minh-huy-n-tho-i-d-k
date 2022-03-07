@@ -183,3 +183,32 @@ filter: brightness(1);
     .main_bg{
         position: absolute;overflow: hidden;top:0;width: 100%;height: 100%;filter: brightness(0.8);
     }
+
+   .spin_anime{
+   animation: spin 15s linear infinite;
+  filter: brightness(1.5);
+}
+
+ .spin_anime_pick_success{
+  animation: spin_big 1.8s ease-out; 
+}
+.bright_img_pick_success_anime{
+  animation: bright_img_pick_success 0.4s linear;
+   animation-iteration-count: 2;
+     animation-direction: alternate;
+}
+
+    @keyframes spin {
+      0% { transform: rotate(0deg);  }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes spin_big {
+      0% { transform:  rotate(0deg);   }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes bright_img_pick_success {
+      0% { filter: brightness(1);   }
+      100% { filter: brightness(4);  }
+    }
+

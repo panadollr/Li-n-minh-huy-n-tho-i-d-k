@@ -38,14 +38,20 @@ $( "#search_champs" ).keyup(function() {
     var data_posi_menu =$(this).data('position');
     $(".card").filter(function() {
        return  $(this).attr('id') == data_posi_menu
-      }).show('normal')
+      }).transition({
+        animation  : 'show',
+      })
       $(".card").filter(function() {
         return  $(this).attr('id') != data_posi_menu
-       }).hide('normal')
+       }).transition({
+        animation  : 'hide',
+      })
   })
 
   $('#all_lane').click(function(){
       $(this).addClass('active')
-      $('.card').show('normal')
+      $('.card').transition({
+        animation  : 'show',
+      })
       $('#position_menu a').removeClass('active')
   })
