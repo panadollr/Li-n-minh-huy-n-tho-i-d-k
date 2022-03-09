@@ -1,11 +1,8 @@
 const ulTag = document.getElementById('champs');
 
 $(document).ready(function(){
-    if(allChamp.length %2 !=0){
-       let liTag = `<h1 style="color:white">Số lượng tướng phải là số chẵn(2,4,6,8,...), hãy cập nhật tướng theo đúng yêu cầu nha Johnny Lưu</h1> `;
-        ulTag.insertAdjacentHTML("beforeend", liTag); 
-    }
-    else if(allChamp.length <8){
+   
+   if(allChamp.length <8){
         let liTag = `<h1 style="color:white">Số lượng tướng phải lớn hơn hoặc bằng 8, hãy cập nhật tướng theo đúng yêu cầu nha đồng chí Bùi</h1> `;
         ulTag.insertAdjacentHTML("beforeend", liTag);    
     }
@@ -29,7 +26,7 @@ $(document).ready(function(){
 $( "#search_champs" ).keyup(function() {
     var dInput = $(this).val().toLowerCase();
     $(".card").filter(function() {
-      $(this).toggle( $(this).text().toLowerCase().indexOf(dInput) > -1 )
+      $(this).toggle( $(this).text().toLowerCase().indexOf(dInput) > -1 )  && $('#all_lane').addClass('active').siblings().removeClass('active')
     })
   });
 
@@ -37,7 +34,7 @@ $( "#search_champs" ).keyup(function() {
     $(this).addClass('active').siblings().removeClass('active');
     var data_posi_menu =$(this).data('position');
     $(".card").filter(function() {
-       return  $(this).attr('id') == data_posi_menu
+       return  $(this).attr('id') == data_posi_menu 
       }).transition({
         animation  : 'show',
       })
@@ -55,3 +52,10 @@ $( "#search_champs" ).keyup(function() {
       })
       $('#position_menu a').removeClass('active')
   })
+
+
+  function nextSkin(i){
+  $('#nextskin').click(function(){
+alert('ádsd')
+})
+  }

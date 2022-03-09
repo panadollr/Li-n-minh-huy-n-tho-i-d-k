@@ -64,11 +64,13 @@
 <div id="main_bg" class="ui container" style="margin-top: 20px;width: 48vw;height: 380px;-webkit-border-radius: 5px;background-repeat: no-repeat;background-size: cover ;overflow-y: scroll;overflow-x: hidden;object-fit: contain;
  ">
 
-
  <video id="video_champ" style="z-index: -3;margin-top: -125px;margin-left: -1px;position: fixed;height: 620px;width: 620px;transform: translateX(-50%);object-fit: contain;border-radius: 100%;display:none">
    <source type="" >
  </video>
 
+<div class="scrollmenu" id="skins" style="display: none;" >
+</div>
+<h2 id="skin_name" style="position: fixed;left:0;right: 0;margin-top: 280px;color: white;display: none;"></h3>
 
 <div id="champs" class="ui inverted five doubling mini cards" style="margin-top:0px;justify-content: center">
 
@@ -86,7 +88,7 @@
 
   <div id="leagues" class="ui visible left vertical inverted sidebar menu" style="width: 20vw;background: transparent;box-shadow: none;">
   <div class="item" style="padding:15px;height: 90px;">
-    
+    <button id="reset_pick" style="display:none" onclick="reset_lock_champ()" class="ui red big button">Pick lại tướng</button>
   </div>
 
   <div class="item" style="padding:15px;height: 90px;">
@@ -218,6 +220,7 @@
 <script src="test.js"></script>
 <script type="text/javascript" src="./js/in_game_selecting.js"></script>
 <script type="text/javascript" src="./js/champ_list.js"></script>
+<script src="skin.js"></script>
 
   
 

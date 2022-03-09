@@ -6,11 +6,7 @@ const ulTag = document.getElementById('champs');
 var nhaccuong = new Audio('musics/Messenger.mp3');
 
 $(document).ready(function(){
-    if(allChamp.length %2 !=0){
-       let liTag = `<h1 style="color:white">Số lượng tướng phải là số chẵn(2,4,6,8,...), hãy cập nhật tướng theo đúng yêu cầu nha Johnny Lưu</h1> `;
-        ulTag.insertAdjacentHTML("beforeend", liTag); 
-    }
-    else if(allChamp.length <8){
+   if(allChamp.length <8){
         let liTag = `<h1 style="color:white">Số lượng tướng phải lớn hơn hoặc bằng 8, hãy cập nhật tướng theo đúng yêu cầu nha đồng chí Bùi</h1> `;
         ulTag.insertAdjacentHTML("beforeend", liTag);    
     }
