@@ -129,8 +129,8 @@ $('#accept_match').click(function(){
     $('#accept_match').css('background',"url(https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/button-accept-disabled.png").css('pointer-events','none');
 $('#accept_m_btn_text').css('filter',"brightness(0.6)");
     $('#find_m_status').text("ĐÃ CHẤP NHẬN !");
-      $('#progress_right').css('filter','brightness(4)').css('animation-play-state','paused;');
-      $('#progress_left').css('filter','brightness(4)').css('animation-play-state','paused;');
+      $('#progress_right').css('filter','brightness(4)').css('animation-play-state','paused');
+      $('#progress_left').css('filter','brightness(4)').css('animation-play-state','paused');
       $('#accept_m').trigger('play');
         setTimeout(()=>{
  $('#success_fm').modal('hide');

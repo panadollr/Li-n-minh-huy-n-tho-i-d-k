@@ -9,7 +9,7 @@ $(document).ready(function(){
     else{
        for (let i = 0; i < allChamp.length; i++) {
   let liTag = `
-<a id="${allChamp[i].vitri}" class="card" style="height: 120px;width: 80px;" data-name="${i}"  a-index="${i + 1}">
+<a id="${allChamp[i].vitri}" class="card" style="height: 120px;width: 75px;" data-name="${i}"  a-index="${i + 1}">
     <div class="image">
       <img src="${allChamp[i].img}" style="height: 80px;">
     </div>
@@ -23,39 +23,3 @@ $(document).ready(function(){
 });
 
 
-$( "#search_champs" ).keyup(function() {
-    var dInput = $(this).val().toLowerCase();
-    $(".card").filter(function() {
-      $(this).toggle( $(this).text().toLowerCase().indexOf(dInput) > -1 )  && $('#all_lane').addClass('active').siblings().removeClass('active')
-    })
-  });
-
-  $(document).on('click','#position_menu a',function(){
-    $(this).addClass('active').siblings().removeClass('active');
-    var data_posi_menu =$(this).data('position');
-    $(".card").filter(function() {
-       return  $(this).attr('id') == data_posi_menu 
-      }).transition({
-        animation  : 'show',
-      })
-      $(".card").filter(function() {
-        return  $(this).attr('id') != data_posi_menu
-       }).transition({
-        animation  : 'hide',
-      })
-  })
-
-  $('#all_lane').click(function(){
-      $(this).addClass('active')
-      $('.card').transition({
-        animation  : 'show',
-      })
-      $('#position_menu a').removeClass('active')
-  })
-
-
-  function nextSkin(i){
-  $('#nextskin').click(function(){
-alert('ádsd')
-})
-  }

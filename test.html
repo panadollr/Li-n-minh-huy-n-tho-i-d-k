@@ -8,28 +8,28 @@
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
 <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.js" integrity="sha512-E378bwaeZf1nwXeJGIwTB58A5gPt5jFU3u6aTGja4ZdRFJeo/N/REKnBgNZOZlH6JdnOPO98vg2AnSGaNfCMFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="css/home2.css">
+ <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+ <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 </head>
 
-<body style="overflow: hidden;background-color: black;">
 
-
-
-<video onvolumechange="0.1" id="video_fm_success" style="position: fixed;width: 100%;height:100%;top: 0;object-fit: cover;image-rendering: pixelated;display: none;">
+<!--video onvolumechange="0.1" id="video_fm_success" style="position: fixed;width: 100%;height:100%;top: 0;object-fit: cover;image-rendering: pixelated;display: none;pointer-events: none;">
   <source src="videos/tes3.mp4" type="video/mp4">
-</video>
+</video-->
 
 
 <!-- IN_GAME_SELECT_PAGE -->
- <div id="select_champ"  style="overflow: hidden;">
+
 
   <img src="images/map-champ-select2.png" alt="" style="object-fit: cover;position: absolute;width: 100%;height: 100%;">
- <center><img class="ah" id="border_champ_bg_pick" src="https://www.nicepng.com/png/full/13-134224_weaknesses-circle.png" style="filter: brightness(1.5);position: fixed;object-fit: contain;margin-top: -70px;justify-content: center;margin-left: -383px;height: 730px;z-index: 2;;" alt="">
-<div id="champ_bg_pick" style="transform: translateY(-14px);z-index: 1;justify-content: center;margin: 0 auto;right: 0;left: 0;height: 620px;position: fixed;width: 620px;border-radius: 100%;background-size: cover;"></div>
+ <center><img class="ah" id="border_champ_bg_pick" src="https://www.nicepng.com/png/full/13-134224_weaknesses-circle.png" style="filter: brightness(1.5);position: fixed;object-fit: contain;margin-top: 30px;justify-content: center;margin-left: -230px;height: 450px;z-index: 2;" alt="">
+<div id="champ_bg_pick" style="transition: 2s;transform: translateY(63px) translateX(6px);z-index: 1;justify-content: center;margin: 0 auto;right: 0;left: 0;height: 385px;position: fixed;width: 385px;border-radius: 100%;background-size: cover;"></div>
 </center> 
   
-    <center id="all" style="z-index: 3;position: relative;" ><div style="height: 90px;width: 60vw;background:transparent;color: white;font-size: 3.5ch;padding: 20px;font-weight: bold;"><span>CHỌN TƯỚNG !</span> 
-        <div id="position_menu" class="ui inverted menu" style="margin-top: 30px;width: 48vw;border-radius: unset;;height: 30px;background: rgba(0, 0, 0, 0.8);">
+    <center id="all" style="visibility: hidden;z-index: 3;position: relative;" ><div style="height: 90px;width: 60vw;background:transparent;color: white;font-size: 3.5ch;padding: 20px;font-weight: bold;"><span>CHỌN TƯỚNG !</span> 
+        <div id="position_menu" class="ui inverted menu" style="margin-top: 30px;width: 48vw;border-radius: unset;;height: 3vh;background: rgba(0, 0, 0, 0.8);">
             <div id="all_lane" class="active item" style="cursor: pointer;border-radius: unset;">
                ALL
               </div>
@@ -64,15 +64,15 @@
 <div id="main_bg" class="ui container" style="margin-top: 20px;width: 48vw;height: 380px;-webkit-border-radius: 5px;background-repeat: no-repeat;background-size: cover ;overflow-y: scroll;overflow-x: hidden;object-fit: contain;
  ">
 
- <video id="video_champ" style="z-index: -3;margin-top: -125px;margin-left: -1px;position: fixed;height: 620px;width: 620px;transform: translateX(-50%);object-fit: contain;border-radius: 100%;display:none">
+ <video id="video_champ" style="z-index: -3;margin-top: -103px;position: fixed;height: 500px;width: 500px;transform: translateX(-48.6%);object-fit: contain;border-radius: 100%;display:none">
    <source type="" >
  </video>
 
 <div class="scrollmenu" id="skins" style="display: none;" >
 </div>
-<h2 id="skin_name" style="position: fixed;left:0;right: 0;margin-top: 280px;color: white;display: none;"></h3>
+<h2 id="skin_name" style="position: relative;margin-top: 270px;color: white;display: none;background: rgba(0, 0, 0, 0.8);"></h3>
 
-<div id="champs" class="ui inverted five doubling mini cards" style="margin-top:0px;justify-content: center">
+<div id="champs" class="ui inverted five doubling cards" style="margin-top:0px;justify-content: center">
 
 </div>
 
@@ -84,9 +84,11 @@
   <h3 id="lock_champ_btn_text" style="position:relative;top:22px;color:white;pointer-events: none;font-size: 2ch;filter: brightness(0.6);">KHÓA</h3>
 </div>
 
+<button id="bang_ngoc_button" style="display: none;margin-top:40px" class="ui small button">Chỉnh sửa trang ngọc</button>
+
    </center>
 
-  <div id="leagues" class="ui visible left vertical inverted sidebar menu" style="width: 20vw;background: transparent;box-shadow: none;">
+  <div id="leagues" class="ui visible left vertical inverted sidebar menu" style="width: 20vw;background: transparent;box-shadow: none;visibility: hidden;">
   <div class="item" style="padding:15px;height: 90px;">
     <button id="reset_pick" style="display:none" onclick="reset_lock_champ()" class="ui red big button">Pick lại tướng</button>
   </div>
@@ -158,8 +160,7 @@
 
 <div class="ui container" style="width: 60vw;"></div>
 
-
-<div id="enemys" class="ui visible right vertical inverted sidebar  menu" style="width:20vw;background: transparent;box-shadow: none;">
+<div id="enemys" class="ui visible right vertical inverted sidebar  menu" style="width:20vw;background: transparent;box-shadow: none;visibility: hidden;">
  
   <a class="item" style="padding:15px;height: 90px;">
     
@@ -208,19 +209,21 @@
 </div>
 
 
+<div class="ui modal" id="bang_ngoc" style="border-radius: unset;border: 0.5px solid #dcb639;">
 </div>
 
 
-</body>
 
 
 
 
 </html>
-<script src="test.js"></script>
-<script type="text/javascript" src="./js/in_game_selecting.js"></script>
-<script type="text/javascript" src="./js/champ_list.js"></script>
-<script src="skin.js"></script>
+<script src="test.js" async></script>
+<script src="./js/in_game_selecting.js" async></script>
+<script src="./js/champ_list.js"></script>
+<script src="js/skin.js" async></script>
+<script src="js/bang_ngoc.js" async></script>
+<script src="js/danh_sach_ngoc_bo_tro.js"></script>
 
   
 

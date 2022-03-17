@@ -98,7 +98,7 @@ var lock_champ_success_sound = new Audio('musics/lock_champ_success.mp3');
     lock_champ_s.onended =function(){
       showSkin(huhu);
       $('#reset_pick').css('display','block')
-      //$('#video_champ').fadeIn('fast').trigger('play');
+      $('#bang_ngoc_button').css('display','block')
     }
     $('#champs').fadeOut('fast')
     $('#main_bg').css('overflow-y','hidden');
@@ -151,17 +151,19 @@ function pick_champ_success_animation(){
      $('#position_menu').hide();
      $('#border_champ_bg_pick').transition('pulse');
      setTimeout(()=>{
+       $('#champ_bg_pick').css('transform','scale(1.30) translateY(50px) translateX(5px)')
 $('#border_champ_bg_pick').addClass('spin_anime_pick_success')
 $('#border_champ_bg_pick').removeClass('spin_anime')
      },1000)
-
       $('#bui_item').removeClass('selecting_item_animation');
 }
 
 function disable_pick_champ_success_animation(){
   hideSkin()
   $('#champ_bg_pick').css('background','none')
+  $('#champ_bg_pick').css('transform','scale(1) translateY(63px) translateX(5px)')
   $('#lock_champ').css('display','block')
+  $('#bang_ngoc_button').css('display','none')
   $('#reset_pick').css('display','none')
   $('#skin_name').css('display','none')
   $('#skins ').transition('fade down')
@@ -223,10 +225,10 @@ $(document).on('click','#position_menu a',function(){
   var data_posi_menu =$(this).data('position');
   $(".card").filter(function() {
      return  $(this).attr('id') == data_posi_menu
-    }).show('normal')
+    }).show()
     $(".card").filter(function() {
       return  $(this).attr('id') != data_posi_menu
-     }).hide('normal')
+     }).hide()
 })
 
 $('#all_lane').click(function(){

@@ -123,13 +123,14 @@ filter: brightness(1);
   #lock_champ {
     background-image: url('https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-static-assets/global/default/images/button-accept-disabled.png');
         width: 210px;height: 62px;
+        background-repeat: no-repeat;
         transition: 0.2s ;
         image-rendering: -webkit-optimize-contrast;
         image-rendering: -moz-crisp-edges;
         image-rendering: optimizeQuality;
         -ms-interpolation-mode:  nearest;
-        margin-top: 10px;
-    transform: scale(0.8);
+        margin-top: -30px;
+    transform: scale(0.75);
     pointer-events: none;
     
       }
@@ -191,6 +192,7 @@ filter: brightness(1);
 
  .spin_anime_pick_success{
   animation: spin_big 1.8s ease-out; 
+  transform: scale(1.3);
 }
 .bright_img_pick_success_anime{
   animation: bright_img_pick_success 0.4s linear;
@@ -204,11 +206,9 @@ filter: brightness(1);
     }
 
     @keyframes spin_big {
-      0% { transform:  rotate(0deg);   }
-      100% { transform: rotate(360deg); }
+      0% { transform:  rotate(0deg) ;   }
+      100% { transform: rotate(360deg) scale(1.3); }
     }
-
-
 
 
     body ::-webkit-scrollbar-track {
@@ -220,7 +220,7 @@ filter: brightness(1);
       overflow: auto;
       position: fixed;
       white-space: nowrap;
-     top : 430px;
+     top : 420px;
       left: 0;right: 0;
       margin: 0 auto;
       width: 600px;
@@ -243,4 +243,71 @@ filter: brightness(1);
     }
     .active_video {
       background: #dcb639;
+    }
+
+
+    #bang_ngoc_button{
+      border-radius: unset;border: 1px solid  #dcb639;background: #1C1C1C;color: whitesmoke;
+    }
+    #bang_ngoc_button:hover{
+      filter: brightness(1.7);
+    }
+    #ngoc_chinh img{
+      image-rendering: pixelated crisp-edges;
+      height: 37px;width: 35px;transform: translateY(-20px);
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    #ngoc_chinh .ac{
+      border: 1.5px solid #dcb639;
+    }
+    #ngoc_chinh img:hover{
+      filter: brightness(2);
+      transition: 0.2s;
+    }
+    #bang_ngoc_chi_tiet  img{
+      image-rendering: pixelated crisp-edges;
+      width: 60px;transform: translateY(0) scale(1.3);
+      margin-left: -9px;
+      cursor: pointer;
+      border-radius: 50%;
+      filter: grayscale(100%);
+      transition: 0.2s;
+      object-fit: contain;
+    }
+
+    #bang_ngoc_chi_tiet img:hover {
+      filter: grayscale(0) ;
+     
+    }
+
+    #bang_ngoc_chi_tiet .ac2{
+      filter: grayscale(0) brightness(1.2);
+    }
+ 
+    #bang_ngoc_nhanh_phu img{
+      image-rendering: pixelated crisp-edges;
+      height: 60px;width: 50px;transform: translateY(0);
+      margin-left: 8px;
+      cursor: pointer;
+      border-radius: 50%;
+      filter: grayscale(100%);
+      transition: 0.2s;
+      object-fit: contain;
+    }
+    #bang_ngoc_nhanh_phu .item.nhanh_phu{
+      transform: scale(1.2);
+    }
+
+    #bang_ngoc_nhanh_phu img:hover {
+      filter: grayscale(0) ;
+    }
+    #bang_ngoc_nhanh_phu .ac2{
+      filter: grayscale(0) ;
+    }
+
+    #ngoc_phu img{
+      image-rendering: pixelated crisp-edges;
+      height: 37px;width: 35px;transform: translateY(-20px);
+      cursor: pointer;
     }

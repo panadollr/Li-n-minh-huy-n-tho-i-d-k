@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <button id="close_bang_ngoc" style="top:-15px;right:-25px;position: absolute;z-index: 1;" class="circular ui icon button"><i class="black big times circle outline icon" ></i></button>
+    <div class="content" >
+        <img id="modal_bg" src="images/bang_ngoc/chuan_xac.jpg" alt="" style="width: 100%;height: 100%;border-radius: unset;position:absolute;object-fit: cover;pointer-events: none;transform:translateY(-21px) translateX(-21px);">
+        <h3 class="header" style="color: white;font-weight: bold;position: fixed;">Ngọc bổ trợ siu cấp vip pro</h3>
+       
+        <div style="margin-top: 65px;">
+          <div class="ui horizontal list" id="ngoc_chinh">
+          <a class="item" style="pointer-events: none;">
+           <img id="icon_disable" src="images/bang_ngoc/chuan_xac_icon_disable.png" alt="" style="height: 100px;width: 100px;transform: translateY(15px);">
+          <div id="progress_stick" style="filter: blur(1px);background: white;border: 3px solid #DDC488;width: 10px;position: fixed;transform: translateX(43px) translateY(-14px);height: 0px;opacity: 0;"></div>
+          </a>
+            <img data-id="0" class="ac item" src="images/bang_ngoc/chuan_xac_icon.png" alt="" >
+            <img data-id="1" class="item" class="" src="images/bang_ngoc/ap_dao_icon.png" alt="" >
+            <img  data-id="2" class="item" class="" src="images/bang_ngoc/phap_thuat_icon.png" alt="" >
+            <img data-id="3" class="item" src="images/bang_ngoc/kien_dinh_icon.png" alt="" >
+            <img data-id="4" class="item" class="" src="images/bang_ngoc/cam_hung_icon.png" alt="">
+          </div>
+    
+            <br>
+            <div class="ui horizontal list" style="margin-left: 25px;margin-top: 33px;" id="bang_ngoc_chi_tiet">
+              <a id="icon_disable" class="item" style="pointer-events: none;filter:  invert(100%) sepia(49%) saturate(1855%) hue-rotate(320deg) brightness(92%) contrast(87%);">
+                <img  src="images/bang_ngoc/vong_tron_border.png" alt="" style="height: 80px;width: 80px;transform: translateY(10px) scale(0.35) translateX(-23px);">
+                <img src="images/bang_ngoc/vong_tron.png" style="height: 50px;width: 50px;transform: translateY(25px) translateX(-64px) scale(0.35);position: fixed;display: none;">
+              </a>
+                 <img  data-id="0" class="item nhanh_chinh"  alt="" >
+                 <img data-id="1" class="item nhanh_chinh"   alt="" > 
+                 <img  data-id="2" class="item nhanh_chinh"  alt="" >
+                 <img data-id="3" class="item nhanh_chinh"  alt="" > 
+              </div> 
+    
+              <br>
+              <div class="ui horizontal list" style="margin-left: 25px;margin-top: 25px;" id="bang_ngoc_nhanh_phu">
+                <div id="progress_stick" style="filter: blur(1px);background: white;border: 3px solid #DDC488;width: 10px;position: fixed;transform: translateX(18px) translateY(-48px);height: 0px;opacity: 0;"></div>
+                <a id="icon_disable" class="item" style="pointer-events: none;filter:  invert(100%) sepia(49%) saturate(1855%) hue-rotate(320deg) brightness(92%) contrast(87%);transform: translateX(-15px);">
+                  <img  src="images/bang_ngoc/vong_tron_border.png" alt="" style="height: 80px;width: 80px;transform: translateY(10px) translateX(-10px) scale(0.25);">
+                  <img src="images/bang_ngoc/vong_tron.png" style="height: 35px;width: 35px;transform: translateY(32px) translateX(-75px) scale(0.35);position: fixed;display: none;">
+                </a>
+                   <img data-id="0" class="item nhanh_phu" src="images/bang_ngoc/chuan_xac/nhanh_phu/dep_lao.png" alt="" >
+                   <img data-id="1" class="item nhanh_phu" class="" src="images/bang_ngoc/chuan_xac/nhanh_phu/nia.png" alt="" >
+                   <img  data-id="2" class="item nhanh_phu" class="" src="images/bang_ngoc/chuan_xac/nhanh_phu/day_nit.png" alt="" >
+                </div> 
+    
+        </div>
+
+      </div>
+
+    </body>
+</html>
+<script>
+    show_bang_ngoc_details(0)  
+    $('#close_bang_ngoc').click(function(){
+    $('#bang_ngoc')
+    .modal('hide');  
+})
+</script>
